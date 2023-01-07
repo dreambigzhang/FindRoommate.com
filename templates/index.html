@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Tinder</title>
+    <!-- include some basic styles for the page -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .header {
+        background-color: #f5f5f5;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+      .header h1 {
+        font-size: 24px;
+        margin: 0;
+        font-weight: normal;
+      }
+      .header img {
+        height: 60px;
+      }
+      .profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+      }
+      .profile img {
+        height: 80%;
+        padding: 10px;
+        width: 600px;
+      }
+      .profile .info {
+        margin-left: 20px;
+      }
+      .profile .name {
+        font-size: 20px;
+        margin: 0;
+      }
+      .profile .age-location {
+        color: #999;
+        font-size: 16px;
+        margin: 5px 0;
+      }
+      .profile .bio {
+        font-size: 16px;
+        color: #333;
+        margin: 5px 0;
+      }
+      .swipe-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0 20px;
+      }
+      .swipe-buttons button {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: none;
+        font-size: 32px;
+        color: white;
+      }
+      .swipe-buttons .like {
+        background-color: #4caf50;
+      }
+      .swipe-buttons .dislike {
+        background-color: #f44336;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header with the Tinder logo and a message -->
+    <div class="header">
+      <img src="{{url_for('static', filename = 'IMG_0015.jpg')}}" alt="Tinder logo">
+      <h1>Keep swiping</h1>
+    </div>
+    <!-- profile information and swipe buttons -->
+    <div class="profile">
+      <!-- profile picture and info -->
+      <img src="{{url_for('static', filename = 'testprofile.png')}}" alt="Profile picture">
+      <div class="info">
+        <h1 class="name">{{ name }}</h1>
+        <p class="age-location">{{ age }} | {{ location }}</p>
+        <p class="bio">{{ bio }}</p>
+      </div>
+      <!-- like and dislike buttons -->
+      <div class="swipe-buttons">
+        <button class="like">Like</button>
+        <button class="dislike">Dislike</button>
+      </div>
+    </div>
+  </body>
+</html>
