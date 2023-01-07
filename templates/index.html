@@ -78,13 +78,13 @@
   <body>
     <!-- header with the Tinder logo and a message -->
     <div class="header">
-      <img src="{{url_for('static', filename = 'IMG_0015.jpg')}}" alt="Tinder logo">
+      <!--img src="{{url_for('static', filename = 'IMG_0015.jpg')}}" alt="Tinder logo"-->
       <h1>Keep swiping</h1>
     </div>
     <!-- profile information and swipe buttons -->
     <div class="profile">
       <!-- profile picture and info -->
-      <img src="{{url_for('static', filename = 'testprofile.png')}}" alt="Profile picture">
+      <!--img src="{{url_for('static', filename = 'testprofile.png')}}" alt="Profile picture"-->
       <div class="info">
         <h1 class="name">{{ name }}</h1>
         <p class="age-location">{{ age }} | {{ location }}</p>
@@ -92,8 +92,24 @@
       </div>
       <!-- like and dislike buttons -->
       <div class="swipe-buttons">
-        <button class="like">Like</button>
-        <button class="dislike">Dislike</button>
+        <!--<button class="like">Like</button>-->
+        <button onclick="runLikeScript()">Like</button>
+        <script>
+          function runLikeScript() {
+            fetch('/run-like-script')
+              /*.then((response) => response.text())*/
+              alert("Liked")
+          }
+        </script>
+
+        <button onclick="runDislikeScript()">Dislike</button>
+        <script>
+          function runDislikeScript() {
+            fetch('/run-dislike-script')
+              /*.then((response) => response.text())*/
+              alert("Disliked")
+          }
+        </script>
       </div>
     </div>
   </body>
