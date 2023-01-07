@@ -8,8 +8,8 @@ loss_fn = torch.nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
 
 # Generate some random data
-x = torch.randn(100, 12)
-y = torch.randn(100, 1)
+x = torch.randn(10, 12)
+y = torch.randn(10, 1)
 
 # Training loop
 for i in range(10):
