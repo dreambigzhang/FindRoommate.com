@@ -1,18 +1,18 @@
 import torch
 
 # Define the model
-model = torch.nn.Linear(5, 1)
+model = torch.nn.Linear(12, 1)
 
 # Define the loss function and optimizer
 loss_fn = torch.nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
 
 # Generate some random data
-x = torch.randn(100, 5)
+x = torch.randn(100, 12)
 y = torch.randn(100, 1)
 
 # Training loop
-for i in range(20):
+for i in range(10):
   # Forward pass
   y_pred = model(x)
   loss = loss_fn(y_pred, y)
@@ -28,3 +28,4 @@ for i in range(20):
 
   # Update weights
   optimizer.step()
+
