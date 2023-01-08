@@ -1,14 +1,9 @@
 from flask import Flask, render_template, redirect, request
 import interface
 from save import *
-
+from user_profile import *
 app = Flask(__name__)
 
-name = 'Karen'
-age = '30'
-bio = 'I like dogs'
-location = 'Kentucky'
-profile_image = './static/testprofile.png'
 @app.route('/')
 def main():
     return render_template('landing.html')
@@ -30,12 +25,20 @@ def login():
 def verify():
     name = request.form['name']
     print(name)
-    user_profile = load_user_profile(name)
-    print(user_profile)
-    if user_profile == None:
-        return redirect('/login')
-    else:
-        return redirect('/swipe')
+    profile = load_user_profile(name)
+    print(profile)
+    if profile == None:
+        pass
+
+@app.route('/like')
+def like():
+    #input ML for like
+    return redirect('/swipe')
+
+@app.route('/dislike')
+def dislike():
+    #input ML for dislike
+    return redirect('/swipe')
 
 if __name__ == '__main__':
     app.run()

@@ -27,7 +27,7 @@ class user_profile():
         self.parameters = torch.rand(12, dtype=torch.float)
         # this is the 'line of best fit' for this user, last value is the offset.
         # not used since we assume there is only one user and all other profiles are simulations
-        #self.preference = torch.rand(13, dtype=torch.float)
+        self.preference = torch.rand(13, dtype=torch.float)
 
     def get_profile_picture(self):
         return self.profile_picture

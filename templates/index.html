@@ -28,20 +28,13 @@
       </div>
       <!-- like and dislike buttons -->
       <div class="swipe-buttons">
-        <button class="like" onclick="runLikeScript()">Like</button>
-        <script>
-          function runLikeScript() {
-            window.location = '/swipe';
-          }
-          
-        </script>
-
-        <button class="dislike" onclick="runDislikeScript()">Dislike</button>
-        <script>
-          function runDislikeScript() {
-            window.location = '/swipe'
-          }
-        </script>
+        <form method="POST" action="{{url_for('like')}}">
+          <input class="like" type="submit"  value="Like">
+        </form>
+        <form method="POST" action="{{url_for('dislike')}}">
+          <input class="dislike" type="submit">
+        </form>
+        
       </div>
     </div>
   </body>
