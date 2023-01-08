@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, request
 import interface
+from save import *
+from user_profile import *
 app = Flask(__name__)
 
 @app.route('/')
@@ -23,13 +25,9 @@ def login():
 def verify():
     name = request.form['name']
     print(name)
-<<<<<<< HEAD
-    return redirect('/swipe')
-=======
     profile = load_user_profile(name)
     print(profile)
     if profile == None:
->>>>>>> 42d9418c7627549dc0dd69cf6026582c2a9db888
 
 @app.route('/like')
 def like():
