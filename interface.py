@@ -4,6 +4,9 @@ import string
 import os
 
 def get_random_person():
+
+        if random.random() < 0.01:
+            return "Rat Bastard", "./static/rat-shower.gif", "The sewer"
     
         with open('./static/manifest.txt', 'r') as f:
             lines = f.readlines()
@@ -22,11 +25,20 @@ def create_random_dataset(size:int = 2)->list:
     output = [user_profile.user_profile()] * size
     
     for profile in output:
-        person = get_random_person()
+        name, image_path, location = get_random_person()
         profile.age = random.randint(1, 65)
-        profile.name = person[0]
-        profile.profile_picture = person[1]
-    
+        profile.name = name
+        profile.profile_picture = image_path
+        
+        # set location
+        if location == None:
+            loc_file = open("location.txt")
+            locations = loc_file.readlines()
+            total_locations = len(locations)
+            location = locations[random.randint(0, total_locations-1)].strip()
+
+        profile.location = location
+
     return output
 
 def request_user_profile_from_backend()->user_profile.user_profile:
