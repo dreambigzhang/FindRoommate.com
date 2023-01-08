@@ -79,10 +79,11 @@ footer {
     color: white;
     background-color: rgb(147, 112, 216,0.6);
     justify-self: center;
-    transition: 0.3s;
+    transition: all 0.3s;
 }
 
 .button:hover {
     background-color: rgb(147, 112, 216,1);
+    transform: scale(1.1);
 }
   
