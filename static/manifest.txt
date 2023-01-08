@@ -2,20 +2,20 @@ Rebeca White,.\static\Faces\090001.jpg,Edmonton,Alberta,19
 James Jordon,.\static\Faces\090002.jpg,Calgary,Alberta,21
 Alex Iqbal,.\static\Faces\090003.jpg,Edmonton,Alberta,18
 bing chling,.\static\Faces\090004.jpg,Edmonton,Alberta,23
-Aaron_Pena,.\static\Faces\090005.jpg,Calgary,Alberta,22
-Aaron_Sorkin,.\static\Faces\090006.jpg,Calgary,Alberta,21
-Aaron_Tippin,.\static\Faces\090007.jpg,Edmonton,Alberta,20
-Abbas_Kiarostami,.\static\Faces\090008.jpg,Edmonton,Alberta,19
-Abba_Eban,.\static\Faces\090009.jpg,Calgary,Alberta,18
-Abdel_Aziz_Al-Hakim,.\static\Faces\090010.jpg,Edmonton,Alberta,25
-Abdel_Madi_Shabneh,.\static\Faces\090011.jpg,Calgary,Alberta,24
-Abdel_Nasser_Assidi,.\static\Faces\090012.jpg,Calgary,Alberta,23
-Abdoulaye_Wade,.\static\Faces\090013.jpg,Edmonton,Alberta,22
-Abdulaziz_Kamilov,.\static\Faces\090014.jpg,Edmonton,Alberta,21
+Aaron Pena,.\static\Faces\090005.jpg,Calgary,Alberta,22
+Aaron Sorkin,.\static\Faces\090006.jpg,Calgary,Alberta,21
+Aaron Tippin,.\static\Faces\090007.jpg,Edmonton,Alberta,20
+Abbas Kiarostami,.\static\Faces\090008.jpg,Edmonton,Alberta,19
+Abba Eban,.\static\Faces\090009.jpg,Calgary,Alberta,18
+Abdel Aziz_Al-Hakim,.\static\Faces\090010.jpg,Edmonton,Alberta,25
+Abdel Madi_Shabneh,.\static\Faces\090011.jpg,Calgary,Alberta,24
+Abdel_Nasser Assidi,.\static\Faces\090012.jpg,Calgary,Alberta,23
+Abdoulaye Wade,.\static\Faces\090013.jpg,Edmonton,Alberta,22
+Abdulaziz Kamilov,.\static\Faces\090014.jpg,Edmonton,Alberta,21
 Abdullah,.\static\Faces\090015.jpg,Calgary,Alberta,20
-Abdullah_Ahmad_Badawi,.\static\Faces\090016.jpg,Calgary,Alberta,18
-Abdullah_al-Attiyah,.\static\Faces\090017.jpg,Vancouver,British Columbia,28
-Abdullah_Gul,.\static\Faces\090018.jpg,Vancouver,British Columbia,22
+Abdullah Ahmad_Badawi,.\static\Faces\090016.jpg,Calgary,Alberta,18
+Abdullah al-Attiyah,.\static\Faces\090017.jpg,Vancouver,British Columbia,28
+Abdullah Gul,.\static\Faces\090018.jpg,Vancouver,British Columbia,22
 Susanne Hebert,.\static\Faces\090020.jpg,Edmonton, Alberta,24
 Ruth Vang,.\static\Faces\090021.jpg,Calgary, Alberta,28
 Francisco Garza,.\static\Faces\090022.jpg,Toronto, Ontario,20
