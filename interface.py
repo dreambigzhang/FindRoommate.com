@@ -7,16 +7,15 @@ def get_random_person():
     
         with open('./static/manifest.txt', 'r') as f:
             lines = f.readlines()
-        files = os.listdir('./static/lfw_funneled')
+        files = os.listdir('./static/Faces')
 
         name = random.choice(lines)
         line_num = lines.index(name)
         
-        folders = [f for f in os.listdir('./static/lfw_funneled') if os.path.isdir(os.path.join('./static/lfw_funneled', f))]
-        folder_path = os.path.join('./static/lfw_funneled', folders[line_num])
-        files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
-        img_path = os.path.join(folder_path, files[0])
-        return name[:-2], img_path
+        images= [f for f in os.listdir('./static/Faces')]
+        img_path = os.path.join('./static/Faces', images[line_num])
+       
+        return name[:-2].replace('_',' '), img_path
 
 
 def create_random_dataset(size:int = 2)->list:
