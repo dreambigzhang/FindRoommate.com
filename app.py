@@ -3,7 +3,6 @@ import interface
 from save import *
 from user_profile import *
 from gradientDescent import MLBackend
-import math
 app = Flask(__name__)
 backend = MLBackend()
 RoomPF = []
@@ -31,8 +30,7 @@ def start():
     sleep=round(RoomPF[9], 4),
     decorate=round(RoomPF[10], 4),
     noise=round(RoomPF[11], 4))
-    return render_template('index.html', name=profile.name, age=profile.age, location=profile.location, bio=profile.bio, pfimg=profile.profile_picture)
-
+    
 @app.route('/refresh')
 def refresh():
     return redirect('/')
