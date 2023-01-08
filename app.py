@@ -28,6 +28,7 @@ def verify():
     profile = load_user_profile(name)
     print(profile)
     if profile == None:
+        pass
 
 @app.route('/like')
 def like():
