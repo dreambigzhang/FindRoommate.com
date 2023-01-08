@@ -31,9 +31,9 @@ def login():
 def verify():
     name = request.form['name']
     print(name)
-    user_profile = load_user_profile(name)
-    print(user_profile)
-    if user_profile == None:
+    profile = load_user_profile(name)
+    print(profile)
+    if profile == None:
 
         profile = user_profile()
         profile.name = name
