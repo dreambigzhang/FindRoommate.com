@@ -20,6 +20,10 @@ body {
     height: 60px;
     font-family: sans-serif;
   }
+  .container{
+    display:flex;
+    justify-content: space-between;
+  }
   .profile {
     display: flex;
     flex-direction: column;
@@ -28,9 +32,9 @@ body {
     height: 100%;
   }
   .profile img {
-    height: 50%;
+    height: auto;
+    max-width: 25vw;
     padding: 10px;
-    width: 50%;
     align-self: center;
   }
   .profile .info {

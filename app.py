@@ -3,6 +3,7 @@ import interface
 from save import *
 from user_profile import *
 from gradientDescent import MLBackend
+import math
 app = Flask(__name__)
 backend = MLBackend()
 RoomPF = []
@@ -13,8 +14,23 @@ def main():
 
 @app.route('/swipe')
 def start():
+    global RoomPF
+    print(RoomPF)
+    print(len(RoomPF))
     profile = interface.request_user_profile_from_backend()
-    return render_template('index.html', name=profile.name, age=profile.age, location="None", bio=profile.bio, pfimg=profile.profile_picture)
+    return render_template('index.html', name=profile.name, age=profile.age, location="None", bio=profile.bio, pfimg=profile.profile_picture,
+    gender=round(RoomPF[0], 4),
+    smoke=round(RoomPF[1], 4),
+    candle=round(RoomPF[2], 4),
+    pet=round(RoomPF[3], 4),
+    instrument=round(RoomPF[4], 4),
+    clean=round(RoomPF[5], 4),
+    cook=round(RoomPF[6], 4),
+    friends=round(RoomPF[7], 4),
+    wake=round(RoomPF[8], 4),
+    sleep=round(RoomPF[9], 4),
+    decorate=round(RoomPF[10], 4),
+    noise=round(RoomPF[11], 4))
 
 @app.route('/refresh')
 def refresh():
@@ -28,9 +44,7 @@ def login():
 def verify():
     global RoomPF
     name = request.form['name']
-    print(name)
     RoomPF = backend.getProfile()
-    print(RoomPF)
     profile = load_user_profile(name)
     if profile == None:
 
@@ -45,18 +59,14 @@ def verify():
 @app.route('/like', methods = ['POST'])
 def like():
     global RoomPF
-    print('like')
     backend.dataLoad(RoomPF, 1)
     RoomPF = backend.getProfile()
-    print(RoomPF)
     return redirect('/swipe')
 
 @app.route('/dislike', methods = ['POST'])
 def dislike():
     global RoomPF
-    print('dislike')
     backend.dataLoad(RoomPF, 0)
-    print(RoomPF)
     RoomPF = backend.getProfile()
     return redirect('/swipe')
 
