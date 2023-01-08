@@ -1,8 +1,21 @@
 <html>
   <head>
     <title>Tinder</title>
-    <!-- include some basic styles for the page -->
     <link rel = "stylesheet" href="static/style.css">
+    <!--script>
+      window.addEventListener('beforeunload', function(event){
+        window.location.href = '/refresh';
+      });
+      console.log()
+    </script-->
+    <script>
+      if (performance.navigation.type == performance.navigation.TYPE_RELOAD){
+        console.info('reloaded!');
+        window.location = '/refresh';
+      } else {
+        console.info('not reloaded');
+      }
+    </script>
   </head>
   <body>
     <!-- header with the Tinder logo and a message -->
@@ -15,7 +28,7 @@
       <!-- profile picture and info -->
       <img src={{pfimg}} alt="Profile picture">
       <div class="info">
-        <h1 class="name">{{ name }}test</h1>
+        <h1 class="name">{{ name }}</h1>
         <p class="age-location">{{ age }} | {{ location }}</p>
         <p class="bio">{{ bio }}</p>
       </div>
@@ -23,8 +36,9 @@
       <div class="swipe-buttons">
         <button class="like" onclick="runLikeScript()">Like</button>
         <script>
+          console.log()
           function runLikeScript() {
-            window.location = '/liked'
+            window.location = '/liked';
           }
           
         </script>
@@ -32,7 +46,7 @@
         <button class="dislike" onclick="runDislikeScript()">Dislike</button>
         <script>
           function runDislikeScript() {
-            fetch('/run-dislike-script')
+            fetch('/dislike')
               /*.then((response) => response.text())*/
               alert("Disliked")
           }
