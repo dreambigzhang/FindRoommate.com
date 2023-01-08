@@ -1,0 +1,3 @@
+[submodule "NameDatabases"]
+	path = NameDatabases
+	url = git@gh_school:smashew/NameDatabases.git
