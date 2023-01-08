@@ -1,0 +1,100 @@
+Toronto, Ontario
+Montreal, Quebec
+Vancouver, British Columbia
+Calgary, Alberta
+Ottawa, Ontario
+Edmonton, Alberta
+Mississauga, Ontario
+Winnipeg, Manitoba
+Brampton, Ontario
+Hamilton, Ontario
+Quebec City, Quebec
+Surrey, British Columbia
+Halifax, Nova Scotia
+London, Ontario
+Markham, Ontario
+Vaughan, Ontario
+Gatineau, Quebec
+Saskatoon, Saskatchewan
+Longueuil, Quebec
+Burnaby, British Columbia
+Kitchener, Ontario
+Laval, Quebec
+Richmond, British Columbia
+Windsor, Ontario
+Regina, Saskatchewan
+Oakville, Ontario
+Richmond Hill, Ontario
+Burlington, Ontario
+Greater Sudbury, Ontario
+Sherbrooke, Quebec
+Barrie, Ontario
+Abbotsford, British Columbia
+Coquitlam, British Columbia
+Guelph, Ontario
+Kamloops, British Columbia
+Trois-Rivières, Quebec
+Moncton, New Brunswick
+St. Catharines, Ontario
+Delta, British Columbia
+Saguenay, Quebec
+Kelowna, British Columbia
+Ajax, Ontario
+Oshawa, Ontario
+Victoria, British Columbia
+Windsor, Ontario
+Brantford, Ontario
+Saint John, New Brunswick
+St. John's, Newfoundland and Labrador
+Halifax, Nova Scotia
+Peterborough, Ontario
+Chatham-Kent, Ontario
+Sudbury, Ontario
+Sarnia, Ontario
+Red Deer, Alberta
+Thunder Bay, Ontario
+Belleville, Ontario
+Lethbridge, Alberta
+Medicine Hat, Alberta
+Prince George, British Columbia
+Dartmouth, Nova Scotia
+Fredericton, New Brunswick
+North Bay, Ontario
+Sault Ste. Marie, Ontario
+Kamloops, British Columbia
+Prince Edward Island
+Nanaimo, British Columbia
+Kamloops, British Columbia
+Abbotsford, British Columbia
+Kelowna, British Columbia
+Victoria, British Columbia
+Langley, British Columbia
+White Rock, British Columbia
+Delta, British Columbia
+Chilliwack, British Columbia
+New Westminster, British Columbia
+Maple Ridge, British Columbia
+Surrey, British Columbia
+Coquitlam, British Columbia
+Burnaby, British Columbia
+Port Coquitlam, British Columbia
+Richmond, British Columbia
+North Vancouver, British Columbia
+West Vancouver, British Columbia
+Vancouver, British Columbia
+Prince George, British Columbia
+Kamloops, British Columbia
+Vernon, British Columbia
+Penticton, British Columbia
+Salmon Arm, British Columbia
+Trail, British Columbia
+Castlegar, British Columbia
+Nelson, British Columbia
+Cranbrook, British Columbia
+Kimberley, British Columbia
+Fernie, British Columbia
+Golden, British Columbia
+Invermere, British Columbia
+Radium Hot Springs, British Columbia
+Revelstoke, British Columbia
+Rossland

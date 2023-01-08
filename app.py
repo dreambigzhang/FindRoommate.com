@@ -14,7 +14,7 @@ def main():
 @app.route('/swipe')
 def start():
     profile = interface.request_user_profile_from_backend()
-    return render_template('index.html', name=profile.name, age=profile.age, location="None", bio=profile.bio, pfimg=profile.profile_picture)
+    return render_template('index.html', name=profile.name, age=profile.age, location=profile.location, bio=profile.bio, pfimg=profile.profile_picture)
 
 @app.route('/refresh')
 def refresh():
