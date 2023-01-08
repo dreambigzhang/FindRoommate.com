@@ -62,12 +62,13 @@ footer {
     padding: 10px;
     border-radius: 15px;
     background-color: rgb(147, 112, 216,1);
-    transition: 0.6s;
+    transition: all 0.6s;
     font-size: 20px;
     color:#E9E9E9;
 }
 
 .container button:hover{
     background-color: rgb(168, 128, 249, 0.6);
+    transform: scale(1.1);
 }
 

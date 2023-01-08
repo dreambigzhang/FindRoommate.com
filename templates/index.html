@@ -20,7 +20,7 @@
       <img class="bannerad" src="./static/intuitAd.png" alt="ad">
       <div class="profile">
         <div class="dataholder">
-          <img src={{pfimg}} alt="Profile picture">
+          <img class="pfimg" src={{pfimg}} alt="Profile picture">
           <div class="data">
             <ul>
               <li class ="1">Gender:{{gender}}</li>
@@ -43,8 +43,8 @@
           <p class="age-location">{{ age }} | {{ location }}</p>
           <p class="bio">{{ bio }}</p>
         </div>
-        <div class="swipe-buttons" alt="ad">
-          <form method="POST" action="{{url_for('like')}}">
+        <div class="swipe-buttons">
+          <form class="test" method="POST" action="{{url_for('like')}}">
             <input class="like" type="submit"  value="Like">
           </form>
           <form method="POST" action="{{url_for('dislike')}}">
@@ -52,7 +52,7 @@
           </form>
         </div>
       </div>
-      <img class="bannerad" src="./static/ccuAd.png">
+      <img class="bannerad" src="./static/ccuAd.png" alt="ad">
     </div>
     <footer>
       
