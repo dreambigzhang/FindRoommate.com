@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome! | FindRoomate.com</title>
-    <link rel="stylesheet" type="text/css" href="./static/landing.css" />
+    <title>Welcome! | FindRoommate.com</title>
+    <link rel="stylesheet" type="text/css" href="./static/landing.css">
     <script>
       if (performance.navigation.type == performance.navigation.TYPE_RELOAD){
         console.info('reloaded!');
@@ -28,14 +28,14 @@
         <h2>About FindRoomate.com</h2>
         <p>Welcome to FindRoomate.com, the roomate tinder site! Our site shows you a potential roomate which you then like or dislike. Our AI registers your answer and provides a new roomate that it thinks you'll be more compatible with. If you like eachother then you'll be matched as roommates</p>
       </section>
-      <section id="start">
-        <button type="button" onclick="runStartScript()">Start!</button>
+      <div id="start">
+        <button class="button" onclick="runStartScript()">Start!</button>
         <script>
           function runStartScript(){
             window.location = '/login';
           }
         </script>
-      </section>
+      </div>
       <section id="search">
         <h2>Search for a Roommate</h2>
         <p>To begin simply press start!</p>

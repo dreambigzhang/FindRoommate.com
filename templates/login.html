@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login! | FindRoomate.com</title>
-        <link rel="stylesheet" href="loging.css">
+        <title>Login! | FindRoommate.com</title>
+        <link rel="stylesheet" href="./static/login.css">
     </head>
     <body>
         <header>
-            <h1>Find Roomate</h1>
+            <h1>FindRoommate</h1>
         </header>
-        <form method="POST" action="{{url_for('verify')}}">
-           <input type="text" placeholder="Enter Username" name="name" ></input>
-           <button>Submit!</button>
-           <script>
-           </script>
-        </form>
+        <div class="container">
+            <h1>Find a Roommate now!</h1>
+            <h2>Enter a username to either create an account or load your data!</h2>
+            <form method="POST" action="{{url_for('verify')}}">
+               <div class="form">
+                   <input type="text" placeholder="Enter Username" name="name" ></input>
+                   <button>Submit!</button>
+               </div>
+            </form>
+        </div>
+        <footer>
+        </footer>
     </body>
 </html>
