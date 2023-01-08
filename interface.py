@@ -3,19 +3,25 @@ import random
 import string
 import os
 
-def get_random_person():
+map=[]
+for a in range (5):
+    for i in range(80):
+        num = random.randint(0,79)
+        map.append(num)
 
+u = 0
+def get_random_person():
+        global u
         if random.random() < 0.01:
             return "Rat Bastard", "./static/rat-shower.gif", "The sewer",'27',"I love to rub and scrub. Rub and scrub is what I do all day long. Some would even call me a rubbing enthusiast, or a scrubbing seargent. Anyways I'm looking for a roommate so swipe right if you value cleanliness!"
     
         with open('./static/manifest.txt', 'r') as f:
             lines = f.readlines()
-
-        line = random.choice(lines)
-        line_num = lines.index(line)
+        print(u)
+        print(map[u])
+        line = lines[map[u]]
         item_list = line.split(',')
-        name = item_list[0][:-2]
-        print(name)
+        name = item_list[0]
         img_path = item_list[1]
         age = item_list[4]
         location = item_list[2] + ', ' + item_list[3]
@@ -23,10 +29,10 @@ def get_random_person():
         with open('./static/bios.txt', 'r') as f:
             liness = f.readlines()
         
-        bio = liness[line_num]
+        bio = liness[map[u]]
 
+        u += 1
         
-        print(name)
         return name, img_path, location, age, bio
 
 

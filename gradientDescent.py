@@ -9,7 +9,7 @@ backend.getProfile() return float[12] a list of 12 floats
 class MLBackend:
   def __init__(self):
     self.batch_size = 10
-    self.parameter_size = 6
+    self.parameter_size = 12
     self.sample_size = 100
     # Define the model
     self.model = torch.nn.Linear(self.parameter_size, 1)
