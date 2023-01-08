@@ -13,7 +13,7 @@
     <!-- profile information and swipe buttons -->
     <div class="profile">
       <!-- profile picture and info -->
-      <img src="{{url_for('static', filename = pfimage)}}" alt="Profile picture">
+      <img src={{pfimg}} alt="Profile picture">
       <div class="info">
         <h1 class="name">{{ name }}test</h1>
         <p class="age-location">{{ age }} | {{ location }}</p>
@@ -27,8 +27,9 @@
           function runLikeScript() {
             fetch('/run-like-script')
               /*.then((response) => response.text())*/
-              alert("Liked")
+              window.location = '/liked'
           }
+          
         </script>
 
         <button onclick="runDislikeScript()">Dislike</button>
