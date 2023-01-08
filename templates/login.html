@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <script>
+            if (performance.navigation.type == performance.navigation.TYPE_RELOAD){
+              console.info('reloaded!');
+              window.location = '/refresh';
+            } else {
+              console.info('not reloaded');
+            }
+          </script>
     </head>
     <body>
         <form method="POST" action="{{url_for('verify')}}">
