@@ -1,5 +1,8 @@
 from flask import Flask, render_template, redirect, request
 import interface
+from save import *
+from user_profile import *
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -23,6 +26,16 @@ def login():
 def verify():
     name = request.form['name']
     print(name)
+    user_profile = load_user_profile(name)
+    print(user_profile)
+    if user_profile == None:
+
+        profile = user_profile()
+        profile.name = name
+        profile.age = 42
+        profile.bio = "This is an interesting biography of a new user of this site"
+        save_user_profile(name, profile)
+
     return redirect('/swipe')
 
 if __name__ == '__main__':
