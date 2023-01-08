@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, request
 import interface
+from save import *
+
 app = Flask(__name__)
 
 name = 'Karen'
@@ -28,7 +30,12 @@ def login():
 def verify():
     name = request.form['name']
     print(name)
-    return redirect('/swipe')
+    user_profile = load_user_profile(name)
+    print(user_profile)
+    if user_profile == None:
+        return redirect('/login')
+    else:
+        return redirect('/swipe')
 
 if __name__ == '__main__':
     app.run()
