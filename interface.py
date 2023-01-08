@@ -1,17 +1,33 @@
 import user_profile
 import random
 import string
+import os
 
-# global variable
-random_name_generator = user_profile.random_name_generator()
+def get_random_person():
+    
+        with open('FindRoommate.com\\archive\manifest.txt', 'r') as f:
+            lines = f.readlines()
+        files = os.listdir('FindRoommate.com\\archive\lfw_funneled')
+
+        name = random.choice(lines)
+        line_num = lines.index(name)
+        
+        folders = [f for f in os.listdir('FindRoommate.com\\archive\lfw_funneled') if os.path.isdir(os.path.join('FindRoommate.com\\archive\lfw_funneled', f))]
+        folder_path = os.path.join('FindRoommate.com\\archive\lfw_funneled', folders[line_num])
+        files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+        img_path = os.path.join(folder_path, files[0])
+
+        return name[:-2], img_path
+
 
 def create_random_dataset(size:int = 2)->list:
     output = [user_profile.user_profile()] * size
     
-    # TODO randomize the user_profiles!
     for profile in output:
+        person = get_random_person()
         profile.age = random.randint(1, 65)
-        profile.name = random_name_generator.generate_random_name()
+        profile.name = person[0]
+        profile.profile_picture = person[1]
     
     return output
 
