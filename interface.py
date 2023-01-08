@@ -6,30 +6,39 @@ import os
 def get_random_person():
 
         if random.random() < 0.01:
-            return "Rat Bastard", "./static/rat-shower.gif", "The sewer"
+            return "Rat Bastard", "./static/rat-shower.gif", "The sewer",'27',"I love to rub and scrub. Rub and scrub is what I do all day long. Some would even call me a rubbing enthusiast, or a scrubbing seargent. Anyways I'm looking for a roommate so swipe right if you value cleanliness!"
     
         with open('./static/manifest.txt', 'r') as f:
             lines = f.readlines()
-        files = os.listdir('./static/lfw_funneled')
 
-        name = random.choice(lines)
-        line_num = lines.index(name)
+        line = random.choice(lines)
+        line_num = lines.index(line)
+        item_list = line.split(',')
+        name = item_list[0][:-2]
+        print(name)
+        img_path = item_list[1]
+        age = item_list[4]
+        location = item_list[2] + ', ' + item_list[3]
         
-        folders = [f for f in os.listdir('./static/lfw_funneled') if os.path.isdir(os.path.join('./static/lfw_funneled', f))]
-        folder_path = os.path.join('./static/lfw_funneled', folders[line_num])
-        files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
-        img_path = os.path.join(folder_path, files[0])
-        return name[:-2], img_path, None
+        with open('./static/bios.txt', 'r') as f:
+            liness = f.readlines()
+        
+        bio = liness[line_num]
+
+        
+        print(name)
+        return name, img_path, location, age, bio
 
 
 def create_random_dataset(size:int = 2)->list:
     output = [user_profile.user_profile()] * size
     
     for profile in output:
-        name, image_path, location = get_random_person()
-        profile.age = random.randint(1, 65)
+        name, image_path, location, age, bio = get_random_person()
+        profile.age = age
         profile.name = name
         profile.profile_picture = image_path
+        profile.bio = bio
         
         # set location
         if location == None:
