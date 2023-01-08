@@ -2,6 +2,7 @@ import user_profile
 import random
 import string
 
+# global variable
 random_name_generator = user_profile.random_name_generator()
 
 def create_random_dataset(size:int = 2)->list:
