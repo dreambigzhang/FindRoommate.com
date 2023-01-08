@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 import interface
 app = Flask(__name__)
 
@@ -24,8 +24,10 @@ def refresh():
 def login():
     return render_template('login.html')
 
-@app.route('/verify')
+@app.route('/verify', methods=['POST'])
 def verify():
+    name = request.form['name']
+    print(name)
     return redirect('/swipe')
 
 if __name__ == '__main__':
