@@ -140,3 +140,8 @@ li{
 .pfimg {
   border-radius: 10%;
 }
+
+li {
+  padding: 10px;
+  font-size: 15px;
+}
