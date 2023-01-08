@@ -33,18 +33,18 @@ def save_user_profile(username, user_profile):
     pickle.dump(save, file)
     file.close()
 
-if __name__ == "__main__":
-    print("helo world!")
+# if __name__ == "__main__":
+#     print("helo world!")
     
-    jono = load_user_profile("jono")
-    print(jono)
-    carl = load_user_profile("carl")
-    print(carl)
+#     jono = load_user_profile("jono")
+#     print(jono)
+#     carl = load_user_profile("carl")
+#     print(carl)
 
-    carl = user_profile()
-    carl.name = "carl"
-    carl.age = 99
+#     carl = user_profile()
+#     carl.name = "carl"
+#     carl.age = 99
 
-    save_user_profile("carl", carl)
+#     save_user_profile("carl", carl)
 
 
