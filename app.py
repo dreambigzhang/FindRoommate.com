@@ -24,12 +24,12 @@ def start():
     pet=round(RoomPF[3], 4),
     instrument=round(RoomPF[4], 4),
     clean=round(RoomPF[5], 4),
-    cook=round(RoomPF[6], 4),
-    friends=round(RoomPF[7], 4),
-    wake=round(RoomPF[8], 4),
-    sleep=round(RoomPF[9], 4),
-    decorate=round(RoomPF[10], 4),
-    noise=round(RoomPF[11], 4))
+    cook=round(0, 4),
+    friends=round(0, 4),
+    wake=round(0, 4),
+    sleep=round(0, 4),
+    decorate=round(0, 4),
+    noise=round(0, 4))
     
 @app.route('/refresh')
 def refresh():
@@ -58,14 +58,14 @@ def verify():
 @app.route('/like', methods = ['POST'])
 def like():
     global RoomPF
-    backend.dataLoad(RoomPF, 1)
+    backend.dataLoad(RoomPF, 1.0)
     RoomPF = backend.getProfile()
     return redirect('/swipe')
 
 @app.route('/dislike', methods = ['POST'])
 def dislike():
     global RoomPF
-    backend.dataLoad(RoomPF, 0)
+    backend.dataLoad(RoomPF, 0.0)
     RoomPF = backend.getProfile()
     return redirect('/swipe')
 
