@@ -31,11 +31,12 @@ body {
   justify-content: space-between;
   height: 100%;
 }
-.profile .dataholder{
+
+.dataholder{
   display: flex;
   flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
+  justify-content: start;
+  width: 100%;
 }
 
 .data{
@@ -43,12 +44,17 @@ body {
   padding-left: 100px;
 }
 
+li{
+  list-style: none;
+}
+
 .profile img {
   height: auto;
   max-width: 25vw;
-  padding: 10px;
-  align-self: center;
+  padding: 20px;
+  justify-self: left;
 }
+
 .profile .info {
   margin-left: 20px;
 }
