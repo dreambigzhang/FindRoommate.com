@@ -19,17 +19,17 @@ def start():
     age=profile.age, location=profile.location, 
     bio=profile.bio, pfimg=profile.profile_picture,
     gender=round(RoomPF[0], 4),
-    smoke=round(RoomPF[1], 4),
-    candle=round(RoomPF[2], 4),
-    pet=round(RoomPF[3], 4),
-    instrument=round(RoomPF[4], 4),
-    clean=round(RoomPF[5], 4),
-    cook=round(RoomPF[6], 4),
-    friends=round(RoomPF[7], 4),
-    wake=round(RoomPF[8], 4),
-    sleep=round(RoomPF[9], 4),
-    decorate=round(RoomPF[10], 4),
-    noise=round(RoomPF[11], 4))
+    smoke=round(RoomPF[1], 4))
+    # candle=round(RoomPF[2], 4),
+    # pet=round(RoomPF[3], 4),
+    # instrument=round(RoomPF[4], 4),
+    # clean=round(RoomPF[5], 4),
+    # cook=round(RoomPF[6], 4),
+    # friends=round(RoomPF[7], 4),
+    # wake=round(RoomPF[8], 4),
+    # sleep=round(RoomPF[9], 4),
+    # decorate=round(RoomPF[10], 4),
+    # noise=round(RoomPF[11], 4))
     
 @app.route('/refresh')
 def refresh():
