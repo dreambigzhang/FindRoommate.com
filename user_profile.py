@@ -23,6 +23,7 @@ class user_profile():
         self.profile_picture = None
         self.name = None
         self.age = None
+        self.location = None
         self.bio = "I love to rub and scrub. Rub and scrub is what I do all day long. Some would even call me a rubbing enthusiast, or a scrubbing seargent. Anyways I'm looking for a roommate so swipe right if you value cleanliness!"
         self.parameters = torch.rand(12, dtype=torch.float)
         # this is the 'line of best fit' for this user, last value is the offset.
