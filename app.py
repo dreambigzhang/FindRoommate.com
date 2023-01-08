@@ -23,7 +23,13 @@ def login():
 def verify():
     name = request.form['name']
     print(name)
+<<<<<<< HEAD
     return redirect('/swipe')
+=======
+    profile = load_user_profile(name)
+    print(profile)
+    if profile == None:
+>>>>>>> 42d9418c7627549dc0dd69cf6026582c2a9db888
 
 @app.route('/like')
 def like():
