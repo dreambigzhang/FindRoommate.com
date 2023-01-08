@@ -1,8 +1,11 @@
 # This is the code for generating a people's profiles
 import torch
 import random
+<<<<<<< HEAD
 import os
 
+=======
+>>>>>>> refs/remotes/origin/main
 """
 1. What is your gender
 2. Do you smoke / vape
@@ -46,3 +49,27 @@ class user_profile():
 
     def __str__(self):
         return "\"{}\", \"{:d}\", \"{}\", Profile Picture URL:\"{}\"".format(self.name, self.age, self.bio, self.profile_picture)
+<<<<<<< HEAD
+=======
+
+class random_name_generator():
+    def __init__(self):
+        # open first name file
+        first_name_file = open("./NameDatabases/NamesDatabases/first names/us.txt")
+        self.first_names = first_name_file.readlines()
+        self.first_names_count = len(self.first_names)
+        # open last name file
+        last_name_file = open("./NameDatabases/NamesDatabases/surnames/us.txt")
+        self.surnames = last_name_file.readlines()
+        self.surnames_count = len(self.surnames)
+        
+
+    def generate_random_name(self)->str:
+        return self.first_names[random.randint(0, self.first_names_count-1)].strip() + " " + self.surnames[random.randint(0, self.surnames_count-1)].strip()
+
+if __name__ == "__main__":
+    a = user_profile()
+    print(a.get_parameters())
+
+    rng = random_name_generator()
+>>>>>>> refs/remotes/origin/main

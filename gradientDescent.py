@@ -1,82 +1,129 @@
 import torch
 import random
 
-def dotProduct(list1, list2):
-  return sum([x*y for x,y in zip(list1,list2)])
+'''
+backend = MLBackend() # to create new backend class object
+backend.dataLoad(float[12], float) # give the backend the user response to a profile after every like and dislike
+backend.getProfile() return float[12] a list of 12 floats
+'''
+class MLBackend:
+  def __init__(self):
+    self.batch_size = 10
+    self.parameter_size = 12
+    self.sample_size = 100
+    # Define the model
+    self.model = torch.nn.Linear(self.parameter_size, 1)
 
-batch_size = 10
-parameter_size = 12
-sample_size = 100
-# Define the model
-model = torch.nn.Linear(parameter_size, 1)
+    # Define the loss function and optimizer
+    self.loss_fn = torch.nn.MSELoss()
+    self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.1)
 
+    self.x = torch.tensor([])
+    self.y = torch.tensor([])
+    
+    self.initTrain()
 
-# Define the loss function and optimizer
-loss_fn = torch.nn.MSELoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+    self.profileCache = self.initProfileGenerate()
+    self.pageNum = 0
 
-# Generate some random data
+    
 
-x = torch.tensor([])
-y = torch.tensor([])
-
-i = 0
-while i < batch_size:
-  newInput = []
-  for j in range(parameter_size):
-      newInput.append(random.random())
-  '''
-  newResponse = float(input('Response: '))
-  newResponse = torch.tensor([[newResponse]])
-  '''
-  #print(newResponse)
-  newResponse = [random.random()]
-
-  x = torch.cat((x, torch.tensor([newInput])),0)
-  y = torch.cat((y, torch.tensor([newResponse])),0)
-  print('Accummulative input:', x, '\nAccummulative response:', y)
-  i+=1
+  def initTrain(self):
+    for i in range(self.batch_size):
+      newInput, newResponse = self.generateTrainingData()
+      self.dataLoad(newInput, newResponse)
 
 
-# Training loop
-for i in range(10):
-  # Forward pass
-  y_pred = model(x)
-  loss = loss_fn(y_pred, y)
+  def dotProduct(self, list1, list2):
+    return sum([x*y for x,y in zip(list1,list2)])
 
-  # Print gradient and bias
-  print('Iteration:', i)
-  print('Gradient:', model.weight.grad)
-  print('Bias:', model.bias.grad)
+  def clearCache(self):
+    self.x = torch.tensor([])
+    self.y = torch.tensor([])
 
-  # Backward pass
-  optimizer.zero_grad()
-  loss.backward()
+  # Generate some random data
+  def dataLoad(self, newInput, newResponse):
+    self.x = torch.cat((self.x, torch.tensor([newInput])),0)
+    self.y = torch.cat((self.y, torch.tensor([[newResponse]])),0)
+    if self.y.size()[0]>= self.batch_size:
+      self.updateGD()
+  
+  def updateGD(self):
+    print('Gradient Descent Updated')
+    # Training loop
+    for i in range(self.batch_size):
+      # Forward pass
+      y_pred = self.model(self.x)
+      self.loss = self.loss_fn(y_pred, self.y)
 
-  # Update weights
-  optimizer.step()
+      # Print gradient and bias
+      #print('Iteration:', i)
+      #print('Gradient:', self.model.weight.grad)
+      #print('Bias:', self.model.bias.grad)
+
+      # Backward pass
+      self.optimizer.zero_grad()
+      self.loss.backward()
+
+      # Update weights
+      self.optimizer.step()
+    self.clearCache()
+
+  def generateTrainingData(self):
+    i = 0
+    while i < self.batch_size:
+      newInput = []
+      for j in range(self.parameter_size):
+          newInput.append(random.random())
+      '''
+      newResponse = float(input('Response: '))
+      newResponse = torch.tensor([[newResponse]])
+      '''
+      #print(newResponse)
+      newResponse = random.random()
+      i+=1
+    return newInput, newResponse
+
+  
+  def initProfileGenerate(self):
+    newUserParameters = []
+    for i in range(self.batch_size):
+        singleUser = []
+        for j in range(self.parameter_size):
+            singleUser.append(random.random())
+        newUserParameters.append(singleUser)
+    return newUserParameters
 
 
-newUserParameters = []
-for i in range(100):
-    singleUser = []
-    for j in range(parameter_size+1):
-        singleUser.append(random.random())
-    newUserParameters.append(singleUser)
+  def recommendProfile(self):
+    print('New Profiles Recommended')
+    newUserParameters = []
+    for i in range(10):
+      newUserParameters += self.initProfileGenerate()
+    for i in range(self.sample_size):
+      rating = self.dotProduct(self.model.weight.grad[0], newUserParameters[i][:-1])
+      rating = rating.item() + self.model.bias.grad.item()
+      newUserParameters[i][-1] = rating
+      #print('Rating:',rating)
+      #print(newUserParameters[i])
 
-for x in newUserParameters:
-  #print(i)
-  rating = dotProduct(model.weight.grad[0], x[:-1])
-  rating = rating.item() + model.bias.grad.item()
-  newUserParameters[i][-1] = rating
-  #print('Rating:',rating)
-  #print(newUserParameters[i])
+    newUserParameters = sorted(newUserParameters, key = lambda x: x[-1], reverse = True)
 
-newUserParameters = sorted(newUserParameters, key = lambda x: x[-1], reverse = True)
+    for i in range(self.sample_size):
+      #print(newUserParameters[i][0])
+      newUserParameters[i] = newUserParameters[i][:self.parameter_size]
+    newUserParameters = newUserParameters[:self.batch_size]
+    return newUserParameters
 
-for i in range(sample_size):
-  print(newUserParameters[i][0])
-  newUserParameters[i] = newUserParameters[i][:parameter_size]
-newUserParameters = newUserParameters[:batch_size]
+  def getProfile(self):
+    if self.pageNum >= 9:
+      self.profileCache = self.recommendProfile()
+      self.pageNum = 0
+    else:
+      self.pageNum+=1
+    return self.profileCache[self.pageNum]
 
-print(len(newUserParameters), len(newUserParameters[0]))
+if __name__ == '__main__':
+  backEnd = MLBackend()
+  for i in range(32):
+    backEnd.dataLoad(backEnd.getProfile(), 1)
