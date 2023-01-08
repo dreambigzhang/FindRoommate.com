@@ -28,7 +28,14 @@ def verify():
     profile = load_user_profile(name)
     print(profile)
     if profile == None:
-        pass
+
+        profile = user_profile()
+        profile.name = name
+        profile.age = 42
+        profile.bio = "This is an interesting biography of a new user of this site"
+        save_user_profile(name, profile)
+
+    return redirect('/swipe')
 
 @app.route('/like')
 def like():
