@@ -1,6 +1,11 @@
 # This is the code for generating a people's profiles
 import torch
 import random
+<<<<<<< HEAD
+import os
+
+=======
+>>>>>>> refs/remotes/origin/main
 """
 1. What is your gender
 2. Do you smoke / vape
@@ -64,4 +69,24 @@ if __name__ == "__main__":
     a = user_profile()
     print(a.get_parameters())
 
+<<<<<<< HEAD
+def get_random_person():
+   
+    with open('FindRoommate.com\\archive\manifest.txt', 'r') as f:
+        lines = f.readlines()
+    files = os.listdir('FindRoommate.com\\archive\lfw_funneled')
+
+    name = random.choice(lines)
+    line_num = lines.index(name)
+    
+    folders = [f for f in os.listdir('FindRoommate.com\\archive\lfw_funneled') if os.path.isdir(os.path.join('FindRoommate.com\\archive\lfw_funneled', f))]
+    folder_path = os.path.join('FindRoommate.com\\archive\lfw_funneled', folders[line_num])
+    files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+    img_path = os.path.join(folder_path, files[0])
+
+    return name[:-2], img_path
+
+print(get_random_person())
+=======
     rng = random_name_generator()
+>>>>>>> refs/remotes/origin/main

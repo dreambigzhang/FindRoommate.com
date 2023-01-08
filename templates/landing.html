@@ -1,17 +1,39 @@
 <html>
   <head>
-    <title>FindRoomate</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Find a Roommate | FindRoomate.com</title>
+    <link rel="stylesheet" type="text/css" href="./static/temp.css" />
   </head>
   <body>
-    <div class="image">
-      <h1>test</h1>
-      <button class="like" onclick="runLikeScript()">Like</button>
-      <script>
-        function runLikeScript() {
-          window.location = '/liked';
-        }
-      </script>
-    </div>
+    <header>
+      <h1>FindRoommate</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#search">Search</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="about">
+        <h2>About FindRoomate.com</h2>
+        <p>Welcome to FindRoomate.com, the roomate tinder site! Our site shows you a potential roomate which you then like or dislike. Our AI registers your answer and provides a new roomate that it thinks you'll be more compatible with. If you like eachother then you'll be matched as roommates</p>
+      </section>
+      <section id="start">
+        <button type="button" onclick="runStartScript()">Start!</button>
+        <script>
+          function runStartScript(){
+            window.location = '/swipe';
+          }
+        </script>
+      </section>
+      <section id="search">
+        <h2>Search for a Roommate</h2>
+        <p>To begin simply press start!</p>
+      </section>
+    </main>
+    <footer>
+      <p>Copyright FindRoomate.com</p>
+    </footer>
   </body>
 </html>
