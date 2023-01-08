@@ -2,7 +2,10 @@ from flask import Flask, render_template, redirect, request
 import interface
 from save import *
 from user_profile import *
+from gradientDescent import MLBackend
 app = Flask(__name__)
+backend = MLBackend()
+UserPF = []
 
 @app.route('/')
 def main():
@@ -25,8 +28,10 @@ def login():
 def verify():
     name = request.form['name']
     print(name)
+    UserPF = backend.getProfile()
+    
     profile = load_user_profile(name)
-    print(profile)
+    # print(profile)
     if profile == None:
 
         profile = user_profile()
@@ -37,14 +42,16 @@ def verify():
 
     return redirect('/swipe')
 
-@app.route('/like')
+@app.route('/like', methods = ['POST'])
 def like():
-    #input ML for like
+    print('like')
+    backend.dataLoad(UserPF, 1)
     return redirect('/swipe')
 
-@app.route('/dislike')
+@app.route('/dislike', methods = ['POST'])
 def dislike():
-    #input ML for dislike
+    print('dislike')
+    backend.dataLoad(UserPF, 0)
     return redirect('/swipe')
 
 if __name__ == '__main__':

@@ -28,9 +28,9 @@ body {
     height: 100%;
   }
   .profile img {
-    height: 80%;
+    height: 50%;
     padding: 10px;
-    width: 70%;
+    width: 50%;
     align-self: center;
   }
   .profile .info {
