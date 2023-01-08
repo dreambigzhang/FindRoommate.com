@@ -21,18 +21,15 @@
       </div>
       <!-- like and dislike buttons -->
       <div class="swipe-buttons">
-        <!--<button class="like">Like</button>-->
-        <button onclick="runLikeScript()">Like</button>
+        <button class="like" onclick="runLikeScript()">Like</button>
         <script>
           function runLikeScript() {
-            fetch('/run-like-script')
-              /*.then((response) => response.text())*/
-              window.location = '/liked'
+            window.location = '/liked'
           }
           
         </script>
 
-        <button onclick="runDislikeScript()">Dislike</button>
+        <button class="dislike" onclick="runDislikeScript()">Dislike</button>
         <script>
           function runDislikeScript() {
             fetch('/run-dislike-script')

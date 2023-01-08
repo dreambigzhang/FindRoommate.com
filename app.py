@@ -11,11 +11,6 @@ profile_image = './static/testprofile.png'
 def main():
     return render_template('index.html', name=name, age=age, location=location, bio=bio, pfimg = profile_image)
 
-
-@app.route('/run-like-script')
-def run_like_script():
-    print('Like')
-    #result = 'Like!'
 @app.route('/run-dislike-script')
 def run_dislike_script():
     print('Dislike')
