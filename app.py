@@ -2,11 +2,6 @@ from flask import Flask, render_template, redirect, request
 import interface
 app = Flask(__name__)
 
-name = 'Karen'
-age = '30'
-bio = 'I like dogs'
-location = 'Kentucky'
-profile_image = './static/testprofile.png'
 @app.route('/')
 def main():
     return render_template('landing.html')
