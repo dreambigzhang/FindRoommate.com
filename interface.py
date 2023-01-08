@@ -1,9 +1,17 @@
 import user_profile
+import random
+import string
 
 def create_random_dataset(size:int = 2)->list:
     output = [user_profile.user_profile()] * size
     
     # TODO randomize the user_profiles!
+    for profile in output:
+        profile.age = random.randint(1, 65)
+        name = ""
+        for i in range(random.randint(5, 12)):
+            name += string.ascii_letters[random.randint(0, 51)]
+        profile.name = name
     
     return output
 
