@@ -1,6 +1,8 @@
 # This is the code for generating a people's profiles
 import torch
 import random
+import os
+
 """
 1. What is your gender
 2. Do you smoke / vape
@@ -16,11 +18,11 @@ import random
 12. How much noise do you produce?
 """
 
-class user_profile:
+class user_profile():
     def __init__(self):
-        self.profile_picture = "https://media.tenor.com/hmsGJDnv6nMAAAAd/rat-shower.gif"
-        self.name = "Larry"
-        self.age = 12
+        self.profile_picture = None
+        self.name = None
+        self.age = None
         self.bio = "I love to rub and scrub. Rub and scrub is what I do all day long. Some would even call me a rubbing enthusiast, or a scrubbing seargent. Anyways I'm looking for a roommate so swipe right if you value cleanliness!"
         self.parameters = torch.rand(12, dtype=torch.float)
         # this is the 'line of best fit' for this user, last value is the offset.
@@ -44,24 +46,3 @@ class user_profile:
 
     def __str__(self):
         return "\"{}\", \"{:d}\", \"{}\", Profile Picture URL:\"{}\"".format(self.name, self.age, self.bio, self.profile_picture)
-
-class random_name_generator():
-    def __init__(self):
-        # open first name file
-        first_name_file = open("./NameDatabases/NamesDatabases/first names/us.txt")
-        self.first_names = first_name_file.readlines()
-        self.first_names_count = len(self.first_names)
-        # open last name file
-        last_name_file = open("./NameDatabases/NamesDatabases/surnames/us.txt")
-        self.surnames = last_name_file.readlines()
-        self.surnames_count = len(self.surnames)
-        
-
-    def generate_random_name(self)->str:
-        return self.first_names[random.randint(0, self.first_names_count-1)].strip() + " " + self.surnames[random.randint(0, self.surnames_count-1)].strip()
-
-if __name__ == "__main__":
-    a = user_profile()
-    print(a.get_parameters())
-
-    rng = random_name_generator()
