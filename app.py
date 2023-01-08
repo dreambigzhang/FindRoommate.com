@@ -5,7 +5,7 @@ from user_profile import *
 from gradientDescent import MLBackend
 app = Flask(__name__)
 backend = MLBackend()
-UserPF = []
+RoomPF = []
 
 @app.route('/')
 def main():
@@ -26,12 +26,12 @@ def login():
 
 @app.route('/verify', methods=['POST'])
 def verify():
+    global RoomPF
     name = request.form['name']
     print(name)
-    UserPF = backend.getProfile()
-    
+    RoomPF = backend.getProfile()
+    print(RoomPF)
     profile = load_user_profile(name)
-    # print(profile)
     if profile == None:
 
         profile = user_profile()
@@ -44,14 +44,20 @@ def verify():
 
 @app.route('/like', methods = ['POST'])
 def like():
+    global RoomPF
     print('like')
-    backend.dataLoad(UserPF, 1)
+    backend.dataLoad(RoomPF, 1)
+    RoomPF = backend.getProfile()
+    print(RoomPF)
     return redirect('/swipe')
 
 @app.route('/dislike', methods = ['POST'])
 def dislike():
+    global RoomPF
     print('dislike')
-    backend.dataLoad(UserPF, 0)
+    backend.dataLoad(RoomPF, 0)
+    print(RoomPF)
+    RoomPF = backend.getProfile()
     return redirect('/swipe')
 
 if __name__ == '__main__':
