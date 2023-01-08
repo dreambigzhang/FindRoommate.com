@@ -4,6 +4,9 @@ import string
 import os
 
 def get_random_person():
+
+        if random.random() < 0.01:
+            return "Rat Bastard", "./static/rat-shower.gif"
     
         with open('./static/manifest.txt', 'r') as f:
             lines = f.readlines()
