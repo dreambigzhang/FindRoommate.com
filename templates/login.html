@@ -4,14 +4,11 @@
 
     </head>
     <body>
-        <main>
-           <input type="text">Enter Username</input>
-           <button onclick="runLoginScript()">Submit!</button>
+        <form method="POST" action="{{url_for('verify')}}">
+           <input type="text" placeholder="Enter Username" name="name" ></input>
+           <button>Submit!</button>
            <script>
-            function runLoginScript(){
-                window.location = '/verify'
-            }
            </script>
-        </main>
+        </form>
     </body>
 </html>
