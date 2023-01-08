@@ -20,6 +20,14 @@ def start():
 def refresh():
     return redirect('/')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/verify')
+def verify():
+    return redirect('/swipe')
+
 if __name__ == '__main__':
     app.run()
 
