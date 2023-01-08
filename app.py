@@ -14,8 +14,6 @@ def main():
 @app.route('/swipe')
 def start():
     global RoomPF
-    print(RoomPF)
-    print(len(RoomPF))
     profile = interface.request_user_profile_from_backend()
     return render_template('index.html', name=profile.name, age=profile.age, location=profile.location, bio=profile.bio, pfimg=profile.profile_picture,
     gender=round(RoomPF[0], 4),
