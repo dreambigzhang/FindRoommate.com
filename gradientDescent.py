@@ -9,7 +9,7 @@ backend.getProfile() return float[12] a list of 12 floats
 class MLBackend:
   def __init__(self):
     self.batch_size = 10
-    self.parameter_size = 12
+    self.parameter_size = 6
     self.sample_size = 100
     # Define the model
     self.model = torch.nn.Linear(self.parameter_size, 1)
@@ -45,7 +45,7 @@ class MLBackend:
   def dataLoad(self, newInput, newResponse):
     self.x = torch.cat((self.x, torch.tensor([newInput])),0)
     self.y = torch.cat((self.y, torch.tensor([[newResponse]])),0)
-    if self.y.size()[0]>= self.batch_size:
+    if self.y.size()[0] >= self.batch_size:
       self.updateGD()
   
   def updateGD(self):
@@ -98,7 +98,7 @@ class MLBackend:
   def recommendProfile(self):
     print('New Profiles Recommended')
     newUserParameters = []
-    for i in range(10):
+    for i in range(self.sample_size // self.batch_size):
       newUserParameters += self.initProfileGenerate()
     for i in range(self.sample_size):
       rating = self.dotProduct(self.model.weight.grad[0], newUserParameters[i][:-1])
@@ -116,7 +116,7 @@ class MLBackend:
     return newUserParameters
 
   def getProfile(self):
-    if self.pageNum >= 9:
+    if self.pageNum >= self.batch_size-1:
       self.profileCache = self.recommendProfile()
       self.pageNum = 0
     else:
@@ -126,4 +126,4 @@ class MLBackend:
 if __name__ == '__main__':
   backEnd = MLBackend()
   for i in range(32):
-    backEnd.dataLoad(backEnd.getProfile(), 1)
+    backEnd.dataLoad(backEnd.getProfile(), 1.0)
