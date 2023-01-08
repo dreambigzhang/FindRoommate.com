@@ -39,27 +39,27 @@ footer {
     height: 100%;
 }
 
-.container form{
+.container .form{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border:solid 5px;
 }
 
 .container input{
-    border:solid 5px;
     width:auto;
     height: 40px;
-    /* border:none; */
+    border:none;
     border-radius: 12px;
     text-align: center;
-    font-size:20px
+    font-size:20px;
+    padding: 10px;
 }
 
 .container button{
-    border:solid 5px;
-    /* border:none; */
+    border:none;
+    margin: 10px;
+    padding: 10px;
     border-radius: 15px;
     background-color: rgb(147, 112, 216,1);
     transition: 0.6s;

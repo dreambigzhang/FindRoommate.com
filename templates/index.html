@@ -13,16 +13,12 @@
     </script>
   </head>
   <body>
-    <!-- header with the Tinder logo and a message -->
-    <div class="header">
-      <!--img src="{{url_for('static', filename = 'IMG_0015.jpg')}}" alt="Tinder logo"-->
+    <header>
       <h1>FindRoomate</h1>
-    </div>
-    <!-- profile information and swipe buttons -->
+    </header>
     <div class="container">
-      <img src="./static/intuitAd.png" alt="ad">
+      <img class="bannerad" src="./static/intuitAd.png" alt="ad">
       <div class="profile">
-        <!-- profile picture and info -->
         <div class="dataholder">
           <img src={{pfimg}} alt="Profile picture">
           <div class="data">
@@ -47,7 +43,6 @@
           <p class="age-location">{{ age }} | {{ location }}</p>
           <p class="bio">{{ bio }}</p>
         </div>
-        <!-- like and dislike buttons -->
         <div class="swipe-buttons" alt="ad">
           <form method="POST" action="{{url_for('like')}}">
             <input class="like" type="submit"  value="Like">
@@ -57,7 +52,10 @@
           </form>
         </div>
       </div>
-      <img src="./static/ccuAd.png">
+      <img class="bannerad" src="./static/ccuAd.png">
     </div>
+    <footer>
+      
+    </footer>
   </body>
 </html>
