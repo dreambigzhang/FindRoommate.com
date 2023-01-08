@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Tinder</title>
+    <title>Swipe! | FindRoomate.com</title>
     <link rel = "stylesheet" href="static/style.css">
     <script>
       if (performance.navigation.type == performance.navigation.TYPE_RELOAD){
@@ -18,24 +18,45 @@
       <h1>Keep swiping</h1>
     </div>
     <!-- profile information and swipe buttons -->
-    <div class="profile">
-      <!-- profile picture and info -->
-      <img src={{pfimg}} alt="Profile picture">
-      <div class="info">
-        <h1 class="name">{{ name }}</h1>
-        <p class="age-location">{{ age }} | {{ location }}</p>
-        <p class="bio">{{ bio }}</p>
+    <div class="container">
+      <img src="./static/intuitAd.png" alt="ad">
+      <div class="profile">
+        <!-- profile picture and info -->
+        <div class="dataholder">
+          <img src={{pfimg}} alt="Profile picture">
+          <div class="data">
+            <ul>
+              <li class ="1">Gender:{{gender}}</li>
+              <li class ="2">Smokes:{{smoke}}</li>
+              <li class ="3">Candles:{{candle}}</li>
+              <li class ="4">Pets:{{pet}}</li>
+              <li class ="5">Play Instrument:{{instrument}}</li>
+              <li class ="6">How much do I clean:{{clean}}</li>
+              <li class ="7">How often do I cook:{{cook}}</li>
+              <li class ="8">How often do I have friends over:{{friends}}</li>
+              <li class ="9">Wake up time:{{wake}}</li>
+              <li class ="10">Sleep time:{{sleep}}</li>
+              <li class ="11">Decorations:{{decorate}}</li>
+              <li class ="12">Noisy:{{noise}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info">
+          <h1 class="name">{{ name }}</h1>
+          <p class="age-location">{{ age }} | {{ location }}</p>
+          <p class="bio">{{ bio }}</p>
+        </div>
+        <!-- like and dislike buttons -->
+        <div class="swipe-buttons" alt="ad">
+          <form method="POST" action="{{url_for('like')}}">
+            <input class="like" type="submit"  value="Like">
+          </form>
+          <form method="POST" action="{{url_for('dislike')}}">
+            <input class="dislike" type="submit" value="Dislike">
+          </form>
+        </div>
       </div>
-      <!-- like and dislike buttons -->
-      <div class="swipe-buttons">
-        <form method="POST" action="{{url_for('like')}}">
-          <input class="like" type="submit"  value="Like">
-        </form>
-        <form method="POST" action="{{url_for('dislike')}}">
-          <input class="dislike" type="submit" value="Dislike">
-        </form>
-        
-      </div>
+      <img src="./static/ccuAd.png">
     </div>
   </body>
 </html>

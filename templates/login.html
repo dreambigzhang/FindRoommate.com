@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Login! | FindRoomate.com</title>
+        <link rel="stylesheet" href="loging.css">
         <script>
             if (performance.navigation.type == performance.navigation.TYPE_RELOAD){
               console.info('reloaded!');
@@ -11,6 +13,9 @@
           </script>
     </head>
     <body>
+        <header>
+            <h1>Find Roomate</h1>
+        </header>
         <form method="POST" action="{{url_for('verify')}}">
            <input type="text" placeholder="Enter Username" name="name" ></input>
            <button>Submit!</button>
