@@ -31,6 +31,12 @@ body {
     justify-content: space-between;
     height: 100%;
   }
+  .profile .dataholder{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+  }
   .profile img {
     height: auto;
     max-width: 25vw;
