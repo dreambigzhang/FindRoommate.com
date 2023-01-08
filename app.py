@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect
-
+import interface
 app = Flask(__name__)
 
 name = 'Karen'
@@ -12,17 +12,14 @@ def main():
     return render_template('index.html', name=name, age=age, location=location, bio=bio, pfimg = profile_image)
 
 
-@app.route('/run-like-script')
-def run_like_script():
-    print('Like')
-    #result = 'Like!'
 @app.route('/run-dislike-script')
 def run_dislike_script():
     print('Dislike')
 
 @app.route('/liked')
 def new():
-    return render_template('liked.html')
+    profile = interface.request_user_profile_from_backend()
+    return render_template('index.html', name=profile.name, age=profile.age, location="None", bio=profile.bio, pfimg=profile.profile_picture)
 
 if __name__ == '__main__':
     app.run()
