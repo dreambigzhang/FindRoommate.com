@@ -1,7 +1,8 @@
 # FindRoommate.com
 
-## The Tinder of finding roommates
+Constantly studying your choices using machine learning, FindRoommate.com can recommend roommates that best suits your criteria!
 
-Tired of your crappy roommate? Try FindRommate.com! Using top of the line Machine Learning techniques, FindRoommate.com will match you with potential roommates who are likely to have similar values as you, making the purchasing experience much easier.
+We used HTML, CSS and JavaScript for the frontend, Flask to respond to requests and call Python script, PyTorch in the backend to perform mini-batch gradient descent machine learning.
+
 
 This program was created for the HackedED2023 hackathon.
