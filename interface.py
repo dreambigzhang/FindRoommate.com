@@ -12,9 +12,8 @@ for a in range (5):
 u = 0
 def get_random_person():
         global u
-        if random.random() < 0.01:
+        if random.random() < 0.08:
             return "Rat Bastard", "./static/rat-shower.gif", "The sewer",'27',"I love to rub and scrub. Rub and scrub is what I do all day long. Some would even call me a rubbing enthusiast, or a scrubbing seargent. Anyways I'm looking for a roommate so swipe right if you value cleanliness!"
-    
         with open('./static/manifest.txt', 'r') as f:
             lines = f.readlines()
         print(u)
@@ -30,15 +29,16 @@ def get_random_person():
             liness = f.readlines()
         
         bio = liness[map[u]]
-
         u += 1
-        
         return name, img_path, location, age, bio
 
 
 def create_random_dataset(size:int = 2)->list:
+    '''
+    generate random name and bio info for training
+    *Not to be confused with backend ML training data generator
+    '''
     output = [user_profile.user_profile()] * size
-    
     for profile in output:
         name, image_path, location, age, bio = get_random_person()
         profile.age = age
@@ -52,9 +52,7 @@ def create_random_dataset(size:int = 2)->list:
             locations = loc_file.readlines()
             total_locations = len(locations)
             location = locations[random.randint(0, total_locations-1)].strip()
-
         profile.location = location
-
     return output
 
 def request_user_profile_from_backend()->user_profile.user_profile:
